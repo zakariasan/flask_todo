@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css')}}">
+        <script src="{{ url_for('static', filename='js/script.js')}}"></script>
+        {% block head %} {% endblock %}
+            </head>
+    <body>
+    
+        <div class="container">
+            <div class="todoApp">
+
+        {% block body%} {% endblock %}
+            </div>
+            <p style="margin: auto 37%">
+            made with (&#9829;) Copyright (c) 2024 zak_4r14. All Rights Reserved.
+                </p>
+        </div>
+    </body>
+</html>

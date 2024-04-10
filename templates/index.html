@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block head%}
+    <title>Task Master</title>
+{% endblock %}
+
+    {% block body%}
+    <h2>To-Do List <img src="{{url_for('static', filename='img/todo.png')}}" alt=""></h2>
+    <div class="row">
+        <input type="text" id="inputBox" placeholder="Add your text">
+        <button onclick="addTask()">Add</button>
+    </div>
+    <ul id="listContainer">
+        {% for task in tasks %}
+        <li class="{% if task.completed %}checked{% endif %} " id="{{task.id}}">
+            <div>{{task.content}}</div>
+            <div>{{task.date_created.date()}}</div>
+            <div><span>X</span></div>
+        </li>
+        {% endfor %}
+
+        <!-- <li class="checked">Task 1</li>
+<li>Task 3</li> -->
+    </ul>
+{% endblock %}
+
+
